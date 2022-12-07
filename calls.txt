@@ -1,0 +1,5 @@
+link /SUBSYSTEM:CONSOLE /Entry:main test.obj lib\User32.lib lib\kernel32.lib 
+
+ld --subsystem windows --entry=Start -o test.exe test.obj c:/Windows/SysWOW64/kernel32.dll c:/Windows/SysWOW64/msvcrt.dll c:/Windows/SysWOW64/user32.dll
+
+nasm -f win32 test.asm -o test.obj
